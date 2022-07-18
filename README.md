@@ -1,4 +1,4 @@
-# Pixiv_apk
+# Pixiv for Android
  这个项目（Pixiv_apk）的初衷是帮助国内安卓无法正常使用Google商店的Pixiv用户下载更新软件，同时存储Pixiv各历史版本的安装包，调用API将该页面实时同步，后续将更新邮箱订阅功能，每当子版本号发布时，将自动发送国内可直接访问的更新链接至订阅者的邮箱.  
 关键词：Pixiv apk Android Download api P站 安装包 安卓 下载
 
