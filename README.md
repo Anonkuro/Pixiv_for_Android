@@ -4,4 +4,4 @@
 
 项目地址：https://download.pixivhub.xyz  
 订阅地址：~~https://subscribe.pixivhub.xyz~~
-![](https://s3.bmp.ovh/imgs/2022/07/18/9a3ea7d8d7896b50.png)
+![](https://s3.bmp.ovh/imgs/2022/07/18/052becd963e18269.png)
