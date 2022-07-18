@@ -1,0 +1,89 @@
+/*
+.root{ background: #00FF23; width: 1400px;; height: 700px; margin: 0 auto;}
+.top{ background: #000000; width: 1200px; height: 600px; margin: 0 auto;}
+
+.topLeft{background: red; width: 800px; height: 600px; float: left; margin: 0 auto;}
+.downRight{background: blue; width: 400px; height: 600px; float: right;}
+*/
+
+.bg{background:; width: 1200px; height: 800px; margin: 0 auto;}
+.phone{background:rgba(0,0,0,0); width: 300px; height: 700px; margin: 0 auto; float: left; margin-top: 50px;}
+
+
+/*
+.pixivLeft{background: black; width: 400px; height: 600px; float: left;}
+.pixivRight{background: #984B4D; width: 400px; height: 600px; float: right;}
+
+.pixivImg{background: #F2E4E4; width: 300px; height: 300px; margin: 0 auto; margin-left: 50px; margin-top: 90px;}
+*/
+.pixivText{ background:; width: 400px; height: 650px; margin: 0 auto; float: right; margin-top: 80px;
+margin-right: 380px;}
+.pixivText h1{color: #029cfe;}
+.pixivText p{font-size: 20px;}
+
+.pixivlogo{ background: url("../images/pixiv.png"); width: 50px; height: 50px; float: left; border-radius: 12px;}
+
+
+
+
+/*.link{background: #9A3BC8; width: 300px; height: 70px; margin: 0 auto; margin-top: 20px;}*/
+.but{ background:; width: 250px; height: 120px; margin: 0 auto;  margin-top: 30px; float: left;}
+
+
+
+.nowDown{background: rgba(223,223,223,0.9); width: 250px; height: 50px; margin: 0 auto; border-radius: 20px;}
+
+.nowDown p{ line-height: 50px; text-align: center; font-size: 26px; color: black; }
+.nowDown a{text-decoration: none;}
+.nowDown p:hover{background: #202224; color: white; border-radius: 20px; font-weight: bold;}
+
+.phoneDown{ background: rgba(223,223,223,0.9); width: 250px; height: 50px; margin: 0 auto; margin-top: 16px; border-radius: 20px;}
+
+.phoneDown p{ line-height: 50px; text-align: center; font-size: 26px; color: black; }
+.phoneDown a{text-decoration: none;}
+.phoneDown p:hover{background: #202224; color: white; border-radius: 20px; font-weight: bold;}
+
+.about{background:; width: 310px; height: 700px; float: left; margin-top: -700px; margin-left: 880px;}
+.about p{font-size: 17px;}
+
+.link p{color: #fff;}
+.link a{ text-decoration: none;}
+
+.line{background: rgba(0,0,0,0); height: 15px; width: 300px; margin-top: 20px;}
+.line1{background: #000; height: 10px; width: 150px; float: left;}
+.line2{background: orange; height: 10px; width: 75px;; float:left;}
+.line3{background: red; height: 10px; width: 37.5px; float:left;}
+.line4{background: blue; height: 10px; width: 18.75px; float:left;}
+.line5{background: rgba(2,156,254,1.00); height: 10px; width: 9px; float:left;}
+.line6{background: gray; height: 10px; width: 5px; float:left;}
+.line7{background: yellow; height: 10px; width: 4.17px; float:left;}
+
+.line1:hover,.line2:hover,.line3:hover,.line4:hover,.line5:hover,.line6:hover,.line7:hover{height: 12px; top: 50%;  margin-top: -1px;}
+
+.github{ background: rgba(0,0,0,1.00); width: 75px; height: 30px; color: white; line-height: 30px; text-align: center; border-radius: 15px; margin-top: 5px; float: left;}
+.qq{ background: rgba(2,156,254,1.00); width: 110px; height: 30px; color: white; line-height: 30px; text-align: center; border-radius: 15px; margin-top: 5px; margin-left: 10px; float: left;}
+.afd{ background: red; width: 100px; height: 30px; margin-top: 5px; color: white; line-height: 30px; text-align: center; border-radius: 15px; float: left;}
+.discord{ background: rgba(77,91,241,1.00); width: 90px; height: 30px; color: white; margin-top: 5px; line-height: 30px; text-align: center; border-radius: 15px; margin-left: 205px;}
+.telegram{ background: rgba(048,169,222,1.00); width: 100px; height: 30px; color: white; line-height: 30px; text-align: center; border-radius: 15px; margin-top: 5px; margin-left: 110px;}
+.pixivgroup{ background: orange; width: 105px; height: 30px; color: white; line-height: 30px; text-align: center; border-radius: 15px; margin-top: 5px; float: left;}
+.otherlink{ background: rgba(87,74,74,1.00); width: 60px; height: 30px; color: white; line-height: 30px; text-align: center; border-radius: 15px; margin-top: 5px; margin-left: 115px;}
+
+.github:hover{ background: rgba(0,0,0,0.7); font-weight: bold;}
+.qq:hover{ background: rgba(2,156,254,0.7); font-weight: bold;}
+.afd:hover{ background: rgba(255,0,255,0.7); font-weight: bold;}
+.discord:hover{ background: rgba(0,0,0,0.7); font-weight: bold;}
+.telegram:hover{ background: rgba(0,0,0,0.7); font-weight: bold;}
+.pixivgroup:hover{ background: rgba(255,0,255,0.7); font-weight: bold;}
+.otherlink:hover{ background: rgba(255,0,255,0.7); font-weight: bold;}
+
+.support{ background: url("../images/support.png"); width: 300px; height: 828px; margin-top: 20px;}
+
+.f1{background: #000000; width: 1px; height: 650px; margin: 0 auto; margin-left: 850px}
+/*.f1:hover{height: 700px;}*/
+
+
+.f2{ background: #000000; width: 10px; height: 10px; margin: 0 auto; margin-left: 845.5px; border-radius: 20px;}
+
+
+
+

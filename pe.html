@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pixiv客户端|下载</title>
+	<link rel="stylesheet" href="css/branch.css" type="text/css">
+	
+	<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+ 
+    li {
+      list-style: none;
+    }
+ 
+/*
+    .main {
+      width: 700px;
+      margin: auto;
+      background: #000;
+    }
+*/
+ 
+    .slides {
+      height: 400px;
+      position: relative;
+    }
+ 
+    .slides ul li {
+      /* display: none; */
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      /* 这里实现淡入淡出的关键 */
+      transition: all 0.3s;
+    }
+ 
+    .slides li.active {
+      /* display: block; */
+      opacity: 1;
+		
+    }
+ 
+    .slides .extra {
+      width: 270px;
+      height: 53px;
+      line-height: 53px;
+      position: absolute;
+      bottom: 0px;
+      background-color: rgba(255, 255, 255, 0.0);		/*文本说明*/
+      z-index: 10;
+    }
+ 
+    .slides .extra h3 {
+      width: 82%;
+      margin: 0;
+      margin-right: 20px;
+      padding-left: 20px;
+      color: #98e404;
+      font-size: 28px;
+      float: left;
+      font-weight: 500;
+      font-family: 'Microsoft Yahei', Tahoma, Geneva;
+    }
+ 
+    .slides .extra a {
+      width: 30px;
+      height: 29px;
+      display: block;
+      float: left;
+      margin-top: 12px;
+      margin-right: 3px;
+      background-image: url(./assets/icon_focus_switch.png);
+    }
+ 
+    .slides .extra .prev {
+      background-position: 0 0;
+    }
+ 
+    .slides .extra .prev:hover {
+      background-position: -30px 0;
+    }
+ 
+    .slides .extra .next {
+      background-position: -60px 0;
+    }
+ 
+    .slides .extra .next:hover {
+      background-position: -90px 0;
+    }
+ 
+    .indicator {
+      padding: 100px 0;
+		width: 500px;
+    }
+ 
+    .indicator ul {
+      list-style-type: none;
+      margin: 0 0 0 4px;
+		margin-left: 120px; margin-top: 460px;
+		
+      padding: 0;
+      overflow: hidden;
+    }
+ 
+    .indicator ul li {
+      position: relative;
+      float: left;
+      width: 36px;
+      margin: 0 4px 0 5px;
+	  
+      text-align: center;
+ 
+      cursor: pointer;
+    }
+ 
+    .indicator li img {
+      display: block;
+      border: 0;
+      text-align: center;
+      width: 6	0px;
+    }
+ 
+    .indicator li .mask {		/*图片li*/
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0);
+    }
+ 
+    .indicator li .border {		/*标注当前图片序号*/
+      display: none;
+      width: 45px;
+		height: 17px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+      border: 3px solid #98e404;
+    }
+ 
+    /* li里面的mask 和 border 刚开始都是显示的 */
+    /* 我们写一个样式css */
+    .indicator .active .mask {
+      display: none;
+    }
+ 
+    .indicator .active .border {
+      display: block;
+    }
+	
+	
+		
+/*
+	大概	
+	第180行 “获取” 下载链接
+	第212行 “大小” 数值
+	第300行 “版本信息"
+	第310行 “立即下载”		
+*/
+		
+		
+		
+  </style>
+</head>
+
+<body style="background: #fafafa;">
+	
+	<div class="head">
+		<div class="logo"><img src="images/pixiv.png"></div>
+		<div class="pixivtext">
+			<h1>Pixiv</h1>
+			<p style=" letter-spacing:6px; float: left;">——让创作变得更有趣.</p>
+			
+			<div class="get"><a href="download/pixiv_v6.52.0.apk"><p>获取</p></a></div>
+			<p style="font-size: 20px; float: left; margin-top: 100px; margin-left: -115px; ">发布平台：Android</p>
+			<a href="https://pixiv.net" target="_blank"><p style="margin-left: 20px; margin-top: 100px; font-size: 20px">网页端</p></a>
+			
+		</div>
+	</div>
+	
+	<div class="line1"></div>
+	
+	<div class="info">
+		<div class="line2"></div>
+		<div class="age">
+			<p>适龄</p>
+			<p style="font-size: 60px; font-weight: bold;">17+</p>
+			<p>岁</p>
+		</div>
+		<div class="line3"></div>
+		<div class="pixivlnc">
+			<p>开发者</p>
+			<img src="images/info_1.png">
+			<p>pixiv lnc.</p>
+			
+		</div>
+		<div class="line3"></div>
+		<div class="language">
+			<p>语言</p>
+			<p style="font-size: 60px; font-weight: bold;">ZH</p>
+			<p>+ 多种语言</p>
+		</div>
+		<div class="line3"></div>
+		<div class="size">
+			<p>大小</p>
+			<p style="font-size: 60px; font-weight: bold;">23.5</p>
+			<p>MB</p>
+		</div>
+	</div>
+	
+	<div class="bg">
+		<div class="phone">
+		
+			
+			<div style=" width: 270px; height: 550px; margin-left: 6px; border-radius: 40px; z-index: 10;">
+<!--				<div class="main">-->
+    			<div class="slides" style=" z-index: -10;">
+					<ul>
+					<li class="active">
+					  <a href="#"><img src="images/s1.jpg" style="width: 476px; height: 952px; border-radius: 90px;"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s2.jpg" style="width: 476px; height: 952px; border-radius: 90px;" src="./assets/b_02.jpg"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s3.jpg" style="width: 476px; height: 952px; border-radius: 90px;" src="./assets/b_03.jpg"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s4.jpg" style="width: 476px; height: 952px; border-radius: 90px;" src="./assets/b_04.jpg"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s5.jpg" style="width: 476px; height: 952px; border-radius: 90px;"src="./assets/b_05.jpg"/></a>
+					</li>
+				  </ul>
+ 
+				 <div class="extra">
+					<a class="prev" href="javascript:;"></a>
+					<a class="next" href="javascript:;"></a>
+				 </div>
+					
+    			</div>
+				
+				<div class="indicator">
+				  <ul>
+					<li class="active">
+					  <img src="images/s_1.png"/>
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_2.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_3.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_4.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_5.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+				  </ul>
+				</div>
+				
+				<div style="background:black; width: 40px; height: 16px; margin-top: -116px; margin-left: 110px; border-radius: 50px;"></div>
+				<div style="background: black; width: 40px; height: 16px; margin-top: -16px; margin-left: 320px; border-radius: 50px;"></div>
+<!--  </div>-->
+			</div>
+			
+		  	<div style=" width: 274px; height: 560px; margin-top: -550px;">
+				<img src="images/phone.png" style="width: 485px; height: 952px;">
+			</div>
+			
+
+		
+	
+	</div>
+	</div>
+	
+	<div style=" background: #8a8a8d;; width: 95%; height: 1px; border-radius: 35px; margin: 0 auto; margin-top: 20px;"></div>
+	
+	<div class="about">
+		<div class="aboutleft">
+			<h1>更新内容</h1>
+			<p>@pixiv lnc.<br>· 进行了部分改善与错误修复</p>
+		</div>
+		<div class="aboutright">
+			<h1>版本历史记录</h1>
+			<p>2022-06-29<br>版本6.52.0</p>
+		</div>
+	</div>
+	
+	<div style=" background: #8a8a8d;; width: 95%; height: 1px; border-radius: 35px; margin: 0 auto;"></div>
+	
+	<div class="download">
+		<div class="button"><a href="download/pixiv_v6.52.0.apk"><p>立即下载</p></a></div>
+	</div>
+	
+	
+	
+	<script>
+    //思路：
+    //(1)下导航栏当鼠标移动上去的时候切换到当前图片，大图片类名排他，小图片类名排他，修改文本样式
+    //(2)点击上一页，大图切换到上一页，如果是第一页，则下标赋值为最后一个图片,否则下标自减
+    //(3)点击下一页，大图切换到下一页，如果是最后一页，则下标改为第一页，否则下标自增
+    //(4)轮播图：利用定时器实现，每隔两秒自动播放，当鼠标移入大盒子main则停止播放，若离开main，继续自动播放
+ 
+ 
+    //获取元素
+    let slides = document.querySelectorAll('.slides li')
+    let liList = document.querySelectorAll('.indicator li')
+    let prev = document.querySelector('.prev')
+    let next = document.querySelector('.next')
+    let main = document.querySelector('.main')
+    let text = document.querySelector('.extra h3')
+ 
+    //全局变量index下标
+    let index = 0
+ 
+    //鼠标移入事件
+    for (let i = 0; i < liList.length; i++) {
+      liList[i].onmouseenter = function () {
+        paita(i)
+        //i要和index的值保持一致
+        index = i
+      }
+    }
+    //点击上一页如果是第一页，则下标赋值为最后一个图片,否则下标自减
+    prev.onclick = function () {
+      index == 0 ? index = liList.length - 1 : index--
+      paita(index)
+    }
+ 
+    //(3)点击下一页，大图切换到下一页，如果是最后一页，则下标改为第一页，否则下标自增
+    next.onclick = function () {
+      index == liList.length - 1 ? index = 0 : index++
+      paita(index)
+    }
+ 
+ 
+    //封装函数，去除冗余代码
+    function paita(i) {
+      //类名排他,干掉兄弟复活自己,小图
+      document.querySelector('.indicator .active').classList.remove('active')
+      liList[i].classList.add('active')
+      //类名排他,干掉兄弟复活自己,大图
+      document.querySelector('.slides .active').classList.remove('active')
+      slides[i].classList.add('active')
+      //修改文本
+      text.innerHTML = `第${i+1}张图的描述信息`
+ 
+    }
+ 
+ 
+    //每隔两秒自动播放
+    let timeID = setInterval(function () {
+      next.onclick()
+    }, 2000)
+    //当鼠标移入大盒子main则停止播放
+    main.onmouseenter = function () {
+      clearInterval(timeID)
+    }
+    //鼠标离开main，继续自动播放
+    main.onmouseleave = function () {
+      timeID = setInterval(function () {
+        next.onclick()
+      }, 2000)
+    }
+  </script>
+	
+</body>
+</html>

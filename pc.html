@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Pixiv客户端|下载</title>
+	<link rel="stylesheet" href="css/main.css" type="text/css">
+	<style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+ 
+    li {
+      list-style: none;
+    }
+ 
+/*
+    .main {
+      width: 700px;
+      margin: auto;
+      background: #000;
+    }
+*/
+ 
+    .slides {
+      height: 400px;
+      position: relative;
+    }
+ 
+    .slides ul li {
+      /* display: none; */
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      /* 这里实现淡入淡出的关键 */
+      transition: all 0.3s;
+    }
+ 
+    .slides li.active {
+      /* display: block; */
+      opacity: 1;
+    }
+ 
+    .slides .extra {
+      width: 270px;
+      height: 53px;
+      line-height: 53px;
+      position: absolute;
+      bottom: 0px;
+      background-color: rgba(255, 255, 255, 0.0);		/*文本说明*/
+      z-index: 10;
+    }
+ 
+    .slides .extra h3 {
+      width: 82%;
+      margin: 0;
+      margin-right: 20px;
+      padding-left: 20px;
+      color: #98e404;
+      font-size: 28px;
+      float: left;
+      font-weight: 500;
+      font-family: 'Microsoft Yahei', Tahoma, Geneva;
+    }
+ 
+    .slides .extra a {
+      width: 30px;
+      height: 29px;
+      display: block;
+      float: left;
+      margin-top: 12px;
+      margin-right: 3px;
+      background-image: url(./assets/icon_focus_switch.png);
+    }
+ 
+    .slides .extra .prev {
+      background-position: 0 0;
+    }
+ 
+    .slides .extra .prev:hover {
+      background-position: -30px 0;
+    }
+ 
+    .slides .extra .next {
+      background-position: -60px 0;
+    }
+ 
+    .slides .extra .next:hover {
+      background-position: -90px 0;
+    }
+ 
+    .indicator {
+      padding: 100px 0;
+    }
+ 
+    .indicator ul {
+      list-style-type: none;
+      margin: 0 0 0 4px;
+		margin-left: 18px; margin-top: 65px;
+		
+      padding: 0;
+      overflow: hidden;
+    }
+ 
+    .indicator ul li {
+      position: relative;
+      float: left;
+      width: 36px;
+      margin: 0 4px 0 5px;
+	  
+      text-align: center;
+ 
+      cursor: pointer;
+    }
+ 
+    .indicator li img {
+      display: block;
+      border: 0;
+      text-align: center;
+      width: 6	0px;
+    }
+ 
+    .indicator li .mask {		/*图片li*/
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.0);
+    }
+ 
+    .indicator li .border {		/*标注当前图片序号*/
+      display: none;
+      width: 45px;
+		height: 17px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 20;
+      border: 3px solid #98e404;
+    }
+ 
+    /* li里面的mask 和 border 刚开始都是显示的 */
+    /* 我们写一个样式css */
+    .indicator .active .mask {
+      display: none;
+    }
+ 
+    .indicator .active .border {
+      display: block;
+    }
+		
+		
+		
+		#wechat {
+            width: 250px;
+            height: 50px;
+			border-radius: 20px;
+			line-height: 50px;
+			text-align: center;
+			font-size: 20px;
+            
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            margin: 28px auto;
+
+            position: relative;
+        }
+
+        #code {
+            display: none;
+
+            width: 200px;
+            height: 217px;
+            
+
+            background-image: url("images/download.pixivhub.space_download_pixiv_v6.52.0.apk.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+            position: absolute;
+            left: 30px;
+            bottom: -220px;
+        }
+
+        #wechat:hover {
+            background: #000000;
+			color: white;
+        }
+
+        #wechat:hover>#code{
+            display: block;
+        }
+		
+		
+		
+  </style>
+</head>
+
+<body style="background: #fafafa;">
+	
+<div class="bg">
+	
+	
+	<!-- Phone start -->
+	<div class="phone">
+		
+			
+			<div style=" width: 270px; height: 550px; margin-left: 6px; border-radius: 40px; z-index: 10;">
+<!--				<div class="main">-->
+    			<div class="slides" style=" z-index: -10;">
+					<ul>
+					<li class="active">
+					  <a href="#"><img src="images/s1.jpg" style="width: 270px; height: 550px; border-radius: 40px;"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s2.jpg" style="width: 270px; height: 550px; border-radius: 40px;" src="./assets/b_02.jpg"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s3.jpg" style="width: 270px; height: 550px; border-radius: 40px;" src="./assets/b_03.jpg"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s4.jpg" style="width: 270px; height: 550px; border-radius: 40px;" src="./assets/b_04.jpg"/></a>
+					</li>
+					<li>
+					  <a href="#"><img src="images/s5.jpg" style="width: 270px; height: 550px; border-radius: 40px;"src="./assets/b_05.jpg"/></a>
+					</li>
+				  </ul>
+ 
+				 <div class="extra">
+					<a class="prev" href="javascript:;"></a>
+					<a class="next" href="javascript:;"></a>
+				 </div>
+					
+    			</div>
+				
+				<div class="indicator">
+				  <ul>
+					<li class="active">
+					  <img src="images/s_1.png"/>
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_2.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_3.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_4.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+					<li>
+					  <img src="images/s_5.png" />
+					  <span class="mask"></span>
+					  <span class="border"></span>
+					</li>
+				  </ul>
+				</div>
+				
+				<div style="background:black; width: 40px; height: 16px; margin-top: -116px; margin-left: 12px; border-radius: 50px;"></div>
+				<div style="background: black; width: 40px; height: 16px; margin-top: -16px; margin-left: 220px; border-radius: 50px;"></div>
+<!--  </div>-->
+			</div>
+			
+		  	<div style=" width: 274px; height: 560px; margin-top: -550px;">
+				<img src="images/phone.png" style="width: 280px; height: 560px;">
+			</div>
+			
+
+		
+	
+	</div>
+	<!-- Phone end -->
+	
+	
+<!--	text start-->
+	
+	<div class="pixivText">
+		<div class="pixivlogo"></div>
+		<h1>&nbsp;Pixiv</h2><br>
+		<p>版 本 号&nbsp;：v6.52.0</p>
+		<p>发 布 者&nbsp;：pixiv lnc.</p>
+		<P>发布时间：2022-06-29</P>
+		<P>发布平台：Android</P>
+		<p>软件大小：23.5 MB</p><br>
+		<p>更新内容<br><b>&nbsp;·&nbsp;</b>进行了部分改善与错误修复</p>
+		
+		
+		
+		<div class="but">
+			<div class="nowDown"><a href="download/pixiv_v6.52.0.apk"><p>点击下载</p></a></div>
+			
+			<div class="phoneDown" id="wechat">
+				<a href="#"><p>扫码下载</p></a>
+				<div id="code"></div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	
+
+<!--text end-->
+	
+	
+	<div class="f1"></div>
+	<div class="f2"></div>
+	
+	
+	<div class="about">
+		<h1>To Pixiv Friend</h1>
+		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;这个项目（Pixiv_apk）的初衷是帮助安卓无法正常安装Google商店的Pixiv用户下载软件，同时存储Pixiv各历史版本的安装包，调用API将该页面实时同步，后续将更新邮箱订阅功能，每当子版本号发布时，将自动发送更新链接至订阅者的邮箱.</p>
+		<div class="link">
+			
+			<div class="line">
+				<div class="line1"></div>
+				<div class="line2"></div>
+				<div class="line3"></div>
+				<div class="line4"></div>
+				<div class="line5"></div>
+				<div class="line6"></div>
+				<div class="line7"></div>
+			
+			</div>
+			
+			<div class="github"><a href="https://github.com/KevinNidhogg/Pixiv_apk" target="_blank"><p>Github</p></a></div>
+			<div class="qq"><a href="https://jq.qq.com/?_wv=1027&k=2UN3skPb" target="_blank"><p>Pixiv交流群</p></a></div>
+			<div class="discord"><a href="https://discord.gg/u6DqgjzkDx" target="_blank"><p>Discord</p></a></div>
+
+			<div class="afd"><a href="https://afdian.net/@kurohane" target="_blank"><p>爱发电赞助</p></a></div>
+			<div class="telegram"><a href="https://t.me/+3-k4CzeCArA2ZWY1" target="_blank"><p>Telegram</p></a></div>
+			<div class="pixivgroup"><a href="https://www.pixiv.net/group/join.php?id=42875&key=a3c72de44e768e7fb2e41b4ca1bf14f5" target="_blank"><p>PixivGroup</p></a></div>
+			<div class="otherlink" type="button" text="弹出消息框" onclick="javascript:alert('请期待(*^▽^*)');"><a href="#"><p>other</p></a></div>
+			
+			<div class="support"></div>
+		</div>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+
+	<script>
+    //思路：
+    //(1)下导航栏当鼠标移动上去的时候切换到当前图片，大图片类名排他，小图片类名排他，修改文本样式
+    //(2)点击上一页，大图切换到上一页，如果是第一页，则下标赋值为最后一个图片,否则下标自减
+    //(3)点击下一页，大图切换到下一页，如果是最后一页，则下标改为第一页，否则下标自增
+    //(4)轮播图：利用定时器实现，每隔两秒自动播放，当鼠标移入大盒子main则停止播放，若离开main，继续自动播放
+ 
+ 
+    //获取元素
+    let slides = document.querySelectorAll('.slides li')
+    let liList = document.querySelectorAll('.indicator li')
+    let prev = document.querySelector('.prev')
+    let next = document.querySelector('.next')
+    let main = document.querySelector('.main')
+    let text = document.querySelector('.extra h3')
+ 
+    //全局变量index下标
+    let index = 0
+ 
+    //鼠标移入事件
+    for (let i = 0; i < liList.length; i++) {
+      liList[i].onmouseenter = function () {
+        paita(i)
+        //i要和index的值保持一致
+        index = i
+      }
+    }
+    //点击上一页如果是第一页，则下标赋值为最后一个图片,否则下标自减
+    prev.onclick = function () {
+      index == 0 ? index = liList.length - 1 : index--
+      paita(index)
+    }
+ 
+    //(3)点击下一页，大图切换到下一页，如果是最后一页，则下标改为第一页，否则下标自增
+    next.onclick = function () {
+      index == liList.length - 1 ? index = 0 : index++
+      paita(index)
+    }
+ 
+ 
+    //封装函数，去除冗余代码
+    function paita(i) {
+      //类名排他,干掉兄弟复活自己,小图
+      document.querySelector('.indicator .active').classList.remove('active')
+      liList[i].classList.add('active')
+      //类名排他,干掉兄弟复活自己,大图
+      document.querySelector('.slides .active').classList.remove('active')
+      slides[i].classList.add('active')
+      //修改文本
+      text.innerHTML = `第${i+1}张图的描述信息`
+ 
+    }
+ 
+ 
+    //每隔两秒自动播放
+    let timeID = setInterval(function () {
+      next.onclick()
+    }, 2000)
+    //当鼠标移入大盒子main则停止播放
+    main.onmouseenter = function () {
+      clearInterval(timeID)
+    }
+    //鼠标离开main，继续自动播放
+    main.onmouseleave = function () {
+      timeID = setInterval(function () {
+        next.onclick()
+      }, 2000)
+    }
+  </script>
+	
+</body>
+</html>
